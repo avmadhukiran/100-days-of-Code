@@ -17,3 +17,11 @@ https://www.quora.com/In-what-scenarios-should-I-use-emplace_back-instead-of-pus
 tie()
 The work of tie() is to unpack the tuple values into seperate variables. 
 There are two variants of tie(), with and without “ignore” , the “ignore” ignores a particular tuple element and stops it from getting unpacked.
+
+memset()
+- We use memset to set all values to 0 or 1 for integral values, would not work if we try to set other values
+Reason is it works byte by byte
+Example: memset(a, -1, sizeof(a))
+
+  char str[] = "geeksforgeeks"; 
+    memset(str, 't', sizeof(str)); 
