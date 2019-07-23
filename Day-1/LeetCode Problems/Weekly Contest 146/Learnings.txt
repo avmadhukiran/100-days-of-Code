@@ -1,0 +1,19 @@
+vector:: assign() is an STL in C++ which assigns new values to the vector elements by
+replacing old ones. It can also modify the size of the vector if necessary.
+
+
+https://stackoverflow.com/questions/4303513/push-back-vs-emplace-back
+Emplace back - constructs and forwards (faster)
+    - use for complex data strucuture when move is not necessary
+Push back - constructs and copies into temp and moves the value
+    - little slow because it does un necessary copies
+
+ emplace_back() vs push_back()
+When we use push_back(), we create an object and then insert it into the vector. 
+With emplace_back(), the object is constructed in-place and saves an unnecessary copy   
+https://www.quora.com/In-what-scenarios-should-I-use-emplace_back-instead-of-push_back-in-C++
+
+
+tie()
+The work of tie() is to unpack the tuple values into seperate variables. 
+There are two variants of tie(), with and without “ignore” , the “ignore” ignores a particular tuple element and stops it from getting unpacked.
