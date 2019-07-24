@@ -1,0 +1,95 @@
+Git Commands:
+
+Getting & Creating projects:
+
+git init - initializes a local Git repository
+git clone <link> - Create a local copy of a remote repository
+
+Basic Snapshotting:
+git Status - check Status
+git add filename.txt Add a file to the staging area
+git add -A - Add all new and changed files to the staging area
+git commit -m "Commit Message" - Commit Changes
+git rm -r fileName.txt - Remove a file or folder
+
+Branching and Merging:
+
+git branch 
+    - List branches and * denotes the current branch
+git branch -a 
+    - List all branches ()
+    Output : 
+        * master
+        remotes/origin/HEAD -> origin/master
+        remotes/origin/master
+
+git branch [branch-name]
+    - Create a new branch
+git branch -d [branch-name]
+    - Delete a branch
+
+git push --origin --delete [branch-name]
+    - Delete a remote branch
+
+git checkout -b [branch Name]
+    - create a new branch and switch to init
+
+git checkout -b [branchName] origin/[branch Name]
+    - Clone a remote branch and switch to it
+git checkout [branchName]
+    - switches to a new branch
+git checkout -
+    - switch to the branch last checkout out
+
+git checkout -- [filename] 
+    - discard changes to a file
+git merge [branch name]
+    - Merge a branch into the active branch
+git merge [source branch] [target branch]
+    - Merge a branch into target branch
+git stash
+    - stash changes in a dirty working directory
+git stash clear 
+    - Remove all stashed entries
+git stash drop
+    - Removes the recently stashed changes
+git stash pop
+    - Restores the recently stashed changes
+
+Sharing and updating projects
+
+git push origin [branch-Name]
+    - pushes a branch to your remote repositor
+git push -u origin [branchName]
+    -Push changes to remote branch and remembers the branch
+
+git push 
+    - push changes to remote repository to a remembered branch
+
+git push origin --delete [branch-Name]
+    - Delete a remote Branch
+git pull    
+    - Updates a local repository to the latest commit
+git pull origin [branch-Name]
+    -Pull changes from remote repository
+git remote add origin
+    - Add a remote repository
+
+git remote set-url origin  
+    -Set a repository origin branch to SSH
+
+Logging:
+git log --follow [filename/folder name]
+    - Gives history of the file
+git log 
+    - View changes
+git log --summary
+    - vie changes detailed
+git diff [source branch] [target branch]
+    preview changes before merging
+
+    Other Commands:
+git reset [file Name]
+    - unstages the file but keeps the changes
+git reset [commit]  
+    - unstages all the commits after this particular commit and saves them locally
