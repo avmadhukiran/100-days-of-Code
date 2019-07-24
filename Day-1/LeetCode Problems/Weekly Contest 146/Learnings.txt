@@ -17,11 +17,51 @@ https://www.quora.com/In-what-scenarios-should-I-use-emplace_back-instead-of-pus
 tie()
 The work of tie() is to unpack the tuple values into seperate variables. 
 There are two variants of tie(), with and without “ignore” , the “ignore” ignores a particular tuple element and stops it from getting unpacked.
+Example : tie(a, b )= make_pair(1 , 3)
 
 memset()
 - We use memset to set all values to 0 or 1 for integral values, would not work if we try to set other values
 Reason is it works byte by byte
 Example: memset(a, -1, sizeof(a))
 
-  char str[] = "geeksforgeeks"; 
-    memset(str, 't', sizeof(str)); 
+char str[] = "geeksforgeeks"; 
+memset(str, 't', sizeof(str)); 
+
+
+using pp = pair<int, int > ;
+
+Bellman Ford Algorithm:
+ Determines the shortest distances from a node x to all nodes of the graph. The code assumes that thread_localgraph is stored
+ in edge list that consists of tuples of the form (a, b , w) meaning that there is an edge from node a 
+ to node b with weight w
+ The algorithm consits of n-1 rounds and on each round the algorithm goes through all the edges
+ of the graph and tries to reduce the distances. The algorithm constructs an array distance that will 
+ contain the distances from 'x' to all nodes of the graph.
+
+ Code:
+ for(int i = 1; i <=n ; i++) distance[i] = INF
+ distance[x] = 0;
+
+ for(int i =1 ; i<n-1;i++){
+     for(auto e : edges){
+         int a, b,w;
+         tie(a, b, w) = e;
+         distance[b] = min(distance[b], distance[a]+w);
+     }
+ }
+
+ Time Complexity : O(n*m), because the algoritgn consists of n-1 rounds
+ and iterates through all m edges during a round
+ Optimisation: Stop the algorithm if no distance can be reduced during a round
+
+Dijkstra's Algorithm:
+
+It finds shortest paths from the starting node to all nodes of the graph, just like BellMan Ford
+The benefit of Dijsktra's Algorithm is that it is more effient
+- Used for large graphs
+- Condition: Requires that there are no negative weigth edges in the graph
+
+Similar ity between dijkstras and Bell Man ford, Both maintain the distances to the nodes and reduces
+them during the search. Dijkstra algo is efficent because it only processes each edge in the graph once,
+using the fact that there are no negative Edges
+
