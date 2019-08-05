@@ -8,12 +8,13 @@ void dfs(int s){
     if(visited[s]) return;
     else
     {
-        visited = true;
-        for(int i : adj[s])
+        visited[s] = true;
+        for(int u : adj[s])
         dfs(u);
     }    
 }
 
+//Time Complexity : DFS marks all vertices connected to S in time proportional to sum of their degrees
 //in BFS we use a queue, at each step the next node in Queue will be processed
 queue<int> q;
 bool visited[N];
