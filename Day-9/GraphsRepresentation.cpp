@@ -50,3 +50,29 @@ edges.push_back({2,4});
  edges.push_back({2, 3, 7});
  
  edges.push_back({2, 4, 5});
+
+
+ //Graph API
+#include<iostream>
+using namespace std;
+class Graph{
+    private:
+    static const int N = 10;
+    vector<int> adj[N];
+    public:
+    Graph(int N){ 
+    }
+    void addEdge(int v, int w){
+        adj[v].push_back(w);
+        adj[w].push_back(v);
+    }
+    
+    vector<int> adjcacentVertices(int v){
+        return adj[v];
+    }
+    
+};
+
+int main(){
+    return 0;
+}
