@@ -23,8 +23,8 @@ void BFS(int s){
     visited[s] = true;
     distance[x] = 0;
     q.push(x);
-
-    while(!q.empyty()){
+ 
+    while(!q.empty()){
         int s = q.front(); q.pop();
         for(auto u : adj[s]){
             if(visited[u]) continue;
@@ -34,3 +34,7 @@ void BFS(int s){
         }
     }
 }
+
+//Time Complexity : BFS computes shortest paths (fewest edges possible)
+//from s to all other vertices in a graph in time proportional to E + V
+
