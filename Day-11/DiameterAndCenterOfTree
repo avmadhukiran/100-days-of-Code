@@ -1,0 +1,33 @@
+int ans;
+Node* res;
+int diameter(Node* root){
+    if(root == NULL){
+        return;
+    }
+    if(root->left == NULL && root->right == NULL )
+    {
+        return 0;
+    }
+    else
+    {
+        int left = diameter(root->left);
+        int right = diameter(root->right);
+        //1 represents that we are counting the current node while calculating the longest path
+        // ans = max(ans,1+left+right));
+
+        if(ans<(1+left+right)){
+            res = root;
+            ans = 1+left+right;
+        }
+        return max(left, right)+1;
+    }  
+}
+
+/*
+Select any vertex v1 on your tree. Run BFS from this vertex. The last vertex (v2) you will proceed will be the furthest vertex from v1. Now run another BFS, this time from vertex v2 and get the last vertex v3.
+
+The path from v2 to v3 is the diameter of the tree and your center lies somewhere on it. More precisely it lies in the middle of it. If the path has 2n + 1 points, there will be only 1 center (in the position n + 1). If the path has 2n points, there will be two centers at the positions n and n + 1.
+
+You only use 2 BFS calls which runs in 2 * O(V) time.
+
+ */

@@ -1,4 +1,22 @@
 #define N 10
+//Non Recursive Approach using Stack
+void dfs(int s){
+    vector<int> visited(N);
+    vector<int> adj[N];
+    stack<int> st;
+    st.push(s);
+    visited[s] = true;
+    while(!st.empty()){
+        int top = st.top();
+        st.pop();
+        if(visited[top]) continue;
+        for(int v : adj[top] ){
+            st.push(v);
+        }
+    }
+}
+//Recursive approach
+
 vector<int> adj[N];
 
 //maintains a visited array

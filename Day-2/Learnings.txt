@@ -84,7 +84,7 @@ git log --follow [filename/folder name]
 git log 
     - View changes
 git log --summary
-    - vie changes detailed
+    - view changes detailed
 git diff [source branch] [target branch]
     preview changes before merging
 
